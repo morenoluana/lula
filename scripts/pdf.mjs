@@ -26,7 +26,13 @@ const browser = await chromium.launch(exe ? { executablePath: exe } : {});
 for (const html of archivos) {
   const page = await browser.newPage();
   await page.goto(pathToFileURL(html).href, { waitUntil: "networkidle" });
-  await page.evaluate(() => document.fonts.ready);
+  // Las fotos tienen loading="lazy": forzar que carguen todas antes de imprimir
+  await page.evaluate(async () => {
+    const imgs = [...document.images];
+    imgs.forEach((i) => { i.loading = "eager"; });
+    await Promise.all(imgs.map((i) => i.complete ? null : new Promise((ok) => { i.onload = i.onerror = ok; })));
+    await document.fonts.ready;
+  });
   await page.emulateMedia({ media: "print" });
   const salida = html.replace(/\.html$/, ".pdf");
   await page.pdf({ path: salida, format: "A4", printBackground: true, preferCSSPageSize: true });

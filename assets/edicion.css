@@ -398,8 +398,15 @@ button, input, textarea { font: inherit; color: inherit; }
   .soluciones .tapado ol { columns: 2; }
   .cuadro { min-height: 190px; }
   .sudoku { width: 118mm; }
+  .foto img { filter: none; }
   .foto figcaption { font-size: 7.6pt; }
-  .portada-foto img { --ratio: 16 / 8; }
+  .foto.der, .foto.izq { width: 31%; }
+  .foto.panoramica img { --ratio: 5 / 2; }
+  .dos-fotos .foto img { --ratio: 4 / 3; }
+  .portada-foto img { --ratio: 5 / 2; }
+  .portada-foto { margin-top: 10px; }
+  .indice { font-size: 9pt; margin-top: 10px; }
+  .indice li { padding: 1px 0; }
   .destacado { font-size: 13pt; }
   .sudoku input { color: transparent; }
   .sudoku-acciones { display: none; }
