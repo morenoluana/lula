@@ -1,4 +1,5 @@
-# Publica el sitio en GitHub Pages cada vez que llega una edición a la rama por defecto.
+# Cada vez que llega una edición: baja las fotos de Wikimedia Commons, genera el PDF,
+# guarda todo en el repo y publica el sitio en GitHub Pages.
 name: Publicar en GitHub Pages
 
 on:
@@ -6,23 +7,66 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   publicar:
-    if: github.ref_name == github.event.repository.default_branch
+    if: github.ref_name == github.event.repository.default_branch && !contains(github.event.head_commit.message, '[fotos-y-pdf]')
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fotos de Wikimedia Commons
+        id: fotos
+        run: |
+          python3 scripts/fotos.py > cambiadas.txt
+          cat cambiadas.txt
+
+      - name: Qué PDFs hay que generar
+        id: pdfs
+        run: |
+          antes="${{ github.event.before }}"
+          if [ -n "$antes" ] && git cat-file -e "$antes" 2>/dev/null; then
+            git diff --name-only "$antes" HEAD -- 'ediciones/*.html' 'assets/*' >> tocadas.txt || true
+          fi
+          # Si cambió algo compartido (CSS, JS, fuentes), rehacer la última edición
+          if grep -q '^assets/' tocadas.txt 2>/dev/null; then ls ediciones/????-??-??.html | tail -1 >> cambiadas.txt; fi
+          grep -E '^ediciones/[0-9-]+\.html$' tocadas.txt >> cambiadas.txt 2>/dev/null || true
+          for f in ediciones/????-??-??.html; do [ -f "${f%.html}.pdf" ] || echo "$f" >> cambiadas.txt; done
+          sort -u cambiadas.txt | grep . > pdfs.txt || true
+          echo "Generar:"; cat pdfs.txt
+          echo "hay=$([ -s pdfs.txt ] && echo si || echo no)" >> "$GITHUB_OUTPUT"
+
+      - name: Generar PDF
+        if: steps.pdfs.outputs.hay == 'si'
+        run: |
+          npm i -g playwright@1.56.1
+          npx -y playwright@1.56.1 install --with-deps chromium
+          node scripts/pdf.mjs $(cat pdfs.txt)
+          python3 scripts/indice.py
+
+      - name: Guardar fotos y PDF en el repo
+        run: |
+          rm -f cambiadas.txt tocadas.txt pdfs.txt
+          git config user.name "lula-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A ediciones assets index.html hoy.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Fotos y PDF [fotos-y-pdf]"
+            git push
+          fi
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

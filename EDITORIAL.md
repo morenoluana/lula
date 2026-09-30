@@ -69,11 +69,33 @@ Arranca desde cero. Muy de a poco: una semana por tema, repitiendo mucho vocabul
 2. Leer `ediciones/registro.md` y la última edición.
 3. Investigar con búsqueda web: noticias del mundo y de Argentina de las últimas 24 h, pronóstico de BA para hoy, agenda cultural de la semana, un estudio científico reciente, efemérides del día.
 4. Copiar la última edición como plantilla a `ediciones/AAAA-MM-DD.html` y reemplazar todo el contenido. Mantener la estructura HTML, las clases y los `id` (los `textarea` y `checkbox` necesitan `id` únicos). Actualizar `<title>`, `description`, `lula:numero`, `lula:fecha`, el link al PDF y el quiz (`data-ok` = índice desde 0 de la opción correcta).
-5. Generar el sudoku (`python3 scripts/sudoku.py AAAA-MM-DD <nivel>`) y pegarlo. Generar el PDF: `node scripts/pdf.mjs ediciones/AAAA-MM-DD.html`. Revisarlo: entre 13 y 18 páginas, fondo crema, sin títulos huérfanos al final de una página.
+5. Generar el sudoku (`python3 scripts/sudoku.py AAAA-MM-DD <nivel>`) y pegarlo. Marcar las fotos (ver «Fotos y diseño»). Se puede probar el PDF con `node scripts/pdf.mjs ediciones/AAAA-MM-DD.html` (saldrá sin fotos), pero el PDF definitivo, con fotos, lo genera GitHub Actions después del push; no subas el PDF de prueba.
 6. Actualizar la portada y el link fijo `hoy.html`: `python3 scripts/indice.py`.
 7. Agregar lo de hoy a `ediciones/registro.md`.
 8. Commit («Edición Nº N — AAAA-MM-DD») y push a la rama por defecto del repo. GitHub Pages publica solo.
 9. Mandar el mail (ver abajo).
+
+## Fotos y diseño
+
+Cada edición lleva **entre 15 y 22 fotos** de referencia de lo que se cuenta: la persona de la noticia, el lugar, el árbol y el ave, la receta, el autor del clásico, la película, la obra de arte, el mapa. Se bajan solas de **Wikimedia Commons** (imágenes libres, con crédito) en GitHub Actions: el entorno de Claude no tiene acceso a Commons, así que no hay que descargarlas a mano.
+
+Cómo marcarlas en el HTML:
+
+```html
+<figure class="foto der retrato" data-id="kafka" data-buscar="Franz Kafka portrait 1923" data-archivo="Franz Kafka, 1923.jpg">
+  <img alt="Retrato de Franz Kafka">
+  <figcaption>Franz Kafka en 1923. <span class="credito"></span></figcaption>
+</figure>
+```
+
+- `data-id`: nombre corto y único en la edición (sin espacios). `data-buscar`: búsqueda en inglés, concreta (nombre científico, nombre completo, título + año). `data-archivo`: opcional, el nombre exacto del archivo en Commons si se conoce.
+- Sin `src` y con el `<span class="credito">` vacío: el script `scripts/fotos.py` completa las dos cosas y marca la figura con `data-lista`.
+- Clases de tamaño: `panoramica` (21:9, ancho completo), `der` o `izq` (flotante al 40 %), `retrato` (4:5), `cuadrada` (1:1). Dos fotos lado a lado: envolverlas en `<div class="dos-fotos">`. La tapa: `class="foto portada-foto"` con un `<span class="sello">` adentro.
+- No usar fotos de gente común ni de menores; sí de figuras públicas, obras, lugares, especies.
+
+Recursos de diseño que se pueden usar: `class="capitular"` en el primer párrafo de una nota larga; `<p class="destacado">` para una cita que resalte; `<p class="ornamento"></p>` como separador; `<span class="etiqueta">` para una etiqueta de color. Las secciones se numeran solas.
+
+Después del push, GitHub Actions baja las fotos, genera el PDF y publica. Si la búsqueda trae una foto que no corresponde, cambiá `data-buscar`, sacá `data-lista`, el `src` y el crédito, y volvé a hacer push.
 
 ## El mail
 
