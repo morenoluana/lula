@@ -1,12 +1,10 @@
-# Mon cahier de français
+# Lula · diario de la mañana
 
-Cuaderno de práctica para aprender francés desde cero, siguiendo los niveles de Cosmopolite (1 = A1 … 5 = C1).
+Un diario hecho a medida, todos los días a las 8 de la mañana: el mundo (sin mirar solo a Estados Unidos), Argentina y Buenos Aires, ciencia y ciencia de todos los días, los árboles y las aves de la ciudad, un clásico de la literatura, un texto en francés, una lectura en inglés, arte, moda, cine, música, historia y algo que asombra. Cada edición sale en web y en PDF A4 para escribir encima en GoodNotes.
 
-Abrí `index.html` en el navegador. Tiene:
+- `index.html`: portada con todas las ediciones.
+- `ediciones/`: una página y un PDF por día, más `registro.md` (lo que ya salió, para no repetir).
+- `EDITORIAL.md`: la guía con la que se arma cada edición.
+- `frances/`: el cuaderno de francés (lecciones A1, tarjetas y conjugación).
 
-- **Lecciones** A1 con audio (voz del navegador), notas y una prueba corta por lección.
-- **Tarjetas** de vocabulario con repaso espaciado (cajas de Leitner). El progreso se guarda en tu navegador.
-- **Conjugar**: práctica del presente con être, avoir, s'appeler, parler, habiter, aller y faire.
-- **Plan**: rutina diaria y el recorrido de los cinco libros.
-
-El contenido es propio. No subas los PDF de los libros a este repo si es público.
+Sitio publicado: https://morenoluana.github.io/lula/ (activá GitHub Pages en *Settings → Pages → Source: GitHub Actions*).
