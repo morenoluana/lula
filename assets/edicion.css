@@ -359,6 +359,23 @@ button, input, textarea { font: inherit; color: inherit; }
 }
 .caja { border-left: 4px solid var(--acc); }
 
+/* ---------- Video (ballet): en la web se reproduce, en el PDF queda el link ---------- */
+.video { margin: 16px 0; break-inside: avoid; }
+.video-marco { position: relative; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; background: #1d1a16; }
+.video-marco iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-link {
+  display: flex; align-items: center; gap: 14px; text-decoration: none; padding: 14px 16px;
+  border: 1px solid var(--acc); border-radius: 6px; background: var(--hoja);
+}
+.video-link .play {
+  flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--acc); color: var(--hoja);
+  display: grid; place-items: center; font-size: 1.1rem;
+}
+.video-link b { display: block; font-family: var(--display); font-size: 1.05rem; }
+.video-link span { font-family: var(--mono); font-size: .72rem; color: var(--tinta-suave); }
+.video figcaption { font-size: .8rem; color: var(--tinta-suave); margin-top: 6px; }
+.ballet { --acc: var(--cultura); }
+
 @media (max-width: 520px) {
   body { font-size: 17px; }
   .clima { grid-template-columns: 1fr; }
@@ -410,4 +427,5 @@ button, input, textarea { font: inherit; color: inherit; }
   .destacado { font-size: 13pt; }
   .sudoku input { color: transparent; }
   .sudoku-acciones { display: none; }
+  .video-marco { display: none; }
 }

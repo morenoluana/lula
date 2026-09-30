@@ -87,6 +87,16 @@
     });
   });
 
+  // Videos: en pantalla se inserta el reproductor arriba del link (el PDF conserva solo el link)
+  document.querySelectorAll(".video[data-youtube]").forEach((v) => {
+    const id = v.dataset.youtube.replace(/[^\w-]/g, "");
+    const inicio = parseInt(v.dataset.inicio || "0", 10);
+    const marco = document.createElement("div");
+    marco.className = "video-marco";
+    marco.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}${inicio ? "?start=" + inicio : ""}" title="${v.dataset.titulo || "Video"}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    v.prepend(marco);
+  });
+
   // Soluciones tapadas hasta que las tocás
   document.querySelectorAll(".tapado").forEach((s) => s.addEventListener("click", () => s.classList.add("visto")));
 })();

@@ -1,6 +1,6 @@
 # Registro de ediciones
 
-Lo que ya salió, para no repetir y para armar el repaso de idiomas. Una fila por edición; la más nueva arriba.
+Lo que ya salió, para no repetir, para armar el repaso de idiomas y la edición especial de fin de mes. Una fila por edición; la más nueva arriba.
 
 | Nº | Fecha | Naturaleza | Receta | Biotec | Clásico | Sección del día | Palabra | Francés (tema) | Vocabulario FR | Vocabulario EN | Historia · lugar | Asombro |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|

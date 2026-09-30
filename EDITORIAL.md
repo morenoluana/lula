@@ -41,14 +41,33 @@ Tiempo de lectura total: 25 a 35 minutos (más el sudoku). En PDF A4, entre 13 y
 ### Sección del día
 
 - **Lunes — Arte y museos:** una obra (preferentemente visible en un museo de BA: Bellas Artes, MALBA, Moderno, Fortabat, Sívori, Decorativo) o un movimiento; cómo mirarla.
-- **Martes — Moda:** historia de una gran casa (Chanel, Dior, Balenciaga, Schiaparelli, Saint Laurent, Givenchy…), un desfile histórico que marcó época, una prenda con historia, o una tendencia actual explicada con su genealogía. También moda argentina (Paco Jamandreu, Pablo Ramírez, Gino Bogani…).
+- **Martes — Moda:** se alternan dos formatos, una semana cada uno. **(a) Grandes casas y pasarelas:** historia de una gran casa (Chanel, Dior, Balenciaga, Schiaparelli, Saint Laurent, Givenchy…), un desfile histórico que marcó época, una prenda con historia, o una tendencia actual explicada con su genealogía. También moda argentina (Paco Jamandreu, Pablo Ramírez, Gino Bogani…). **(b) Moda de la calle porteña:** cómo se vestía Buenos Aires en una época (el Centenario de 1910, los años 20 en la calle Florida, los 40, los 60 y el Di Tella, los 80…), con **3 o 4 fotos de archivo** (en Commons hay muchas del Archivo General de la Nación: buscar «Archivo General de la Nación Argentina» + año o lugar), qué se usaba, por qué y qué quedó hoy. Anotar en el registro cuál de los dos formatos salió.
 - **Miércoles — Letras argentinas:** Borges, Cortázar, Ocampo, Pizarnik, Arlt, Storni, Walsh, Saer, Aira, Piñeiro… Fragmento corto (cita breve si no es de dominio público) y contexto.
 - **Jueves — Cine clásico + moda en pantalla:** una película vieja, un actor o una actriz, un director. Si hay un ciclo en BA (Sala Lugones, MALBA, Cineteca), usarlo. Siempre con una caja «Moda en pantalla»: el vestuario de una película clásica y quién lo diseñó (Givenchy, Edith Head, Travilla, Adrian, Chanel…).
 - **Viernes — Música clásica:** una obra con guía de escucha por movimientos, su historia y dónde escucharla en BA (Colón, Usina del Arte, CCK). Más un plan para el fin de semana.
-- **Sábado — Ballet:** una obra (Cascanueces, El lago de los cisnes, Giselle, La bella durmiente, Don Quijote, Romeo y Julieta…), un personaje o un momento: su historia, la música, bailarinas y bailarines legendarios (Pávlova, Nijinsky, Fonteyn, Nuréyev, Plisétskaya, Paloma Herrera, Julio Bocca, Maximiliano Guerra, Marianela Núñez), qué mirar en una función y qué hay en cartel en el Colón. Es su sección favorita: con cariño y detalle.
+- **Sábado — Ballet:** una obra (Cascanueces, El lago de los cisnes, Giselle, La bella durmiente, Don Quijote, Romeo y Julieta…), un personaje o un momento: su historia, la música, bailarinas y bailarines legendarios (Pávlova, Nijinsky, Fonteyn, Nuréyev, Plisétskaya, Paloma Herrera, Julio Bocca, Maximiliano Guerra, Marianela Núñez), qué mirar en una función y qué hay en cartel en el Colón. Es su sección favorita: con cariño y detalle. Siempre con **un video**: un fragmento buscado con WebSearch en YouTube (una variación, un pas de deux, una escena), con la URL verificada en los resultados; nunca inventar un ID. Se marca así, y en la web se reproduce mientras en el PDF queda el link (clickeable en GoodNotes):
+
+  ```html
+  <figure class="video" data-youtube="ID_DEL_VIDEO" data-inicio="0" data-titulo="El cisne negro, coda del acto III">
+    <a class="video-link" href="https://www.youtube.com/watch?v=ID_DEL_VIDEO"><span class="play">▶</span><div><b>El cisne negro · coda del acto III</b><span>Marianela Núñez · Royal Ballet · 3 min · mirar en YouTube</span></div></a>
+    <figcaption>Qué mirar: los 32 fouettés…</figcaption>
+  </figure>
+  ```
 - **Domingo — Edición lenta:** un texto clásico más largo, «la semana en 10 titulares», repaso completo de las palabras en francés e inglés de la semana, y el «asombro de la semana».
 
 La historia argentina entra en «Hoy en la historia»: alternar efemérides universales y argentinas.
+
+### Edición especial de fin de mes: «Tu mes en Lula»
+
+El **último día de cada mes**, la edición normal suma al final una sección especial (`class="sec especial"`, que empieza en página nueva con `nueva-pagina`), armada a partir de `ediciones/registro.md`:
+
+- **Tu herbario del mes:** todas las especies que salieron (árbol, flor, ave), cada una con su foto chica y una casilla «la vi», para tildar en GoodNotes.
+- **Palabras del mes:** todo el vocabulario de francés e inglés del mes, en dos columnas, para repasar tapando una.
+- **Lo que leíste:** los clásicos, las películas, las obras, las casas de moda y los ballets del mes, en una lista linda.
+- **Los números del mes:** cuántas ediciones, noticias, países del mundo que aparecieron, sudokus.
+- **Tu balance:** tres preguntas para escribir (qué te gustó más, qué aprendiste, qué querés que aparezca más).
+
+El **31 de diciembre** es «Tu año en Lula»: lo mismo, pero del año entero, con lo mejor de cada mes.
 
 ### Progresión del francés
 
