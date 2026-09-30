@@ -2,8 +2,8 @@
    Una hoja: se lee en pantalla y se imprime a PDF (A4) para GoodNotes. */
 
 :root {
-  --papel: #f7f2e8;
-  --hoja: #fffdf8;
+  --papel: #f5edd6;
+  --hoja: #faf4e2;
   --tinta: #1d1a16;
   --tinta-suave: #5d564c;
   --regla: #ddd3c2;
@@ -260,6 +260,41 @@ button, input, textarea { font: inherit; color: inherit; }
 .archivo .num { font-family: var(--mono); font-size: .75rem; color: var(--tinta-suave); }
 .pildora { font-family: var(--mono); font-size: .75rem; border: 1px solid var(--regla-fuerte); border-radius: 99px; padding: 2px 10px; text-decoration: none; margin-right: 6px; }
 
+
+/* ---------- Sudoku ---------- */
+.sudoku {
+  display: grid; grid-template-columns: repeat(9, 1fr); width: min(100%, 405px); aspect-ratio: 1;
+  border: 2.5px solid var(--tinta); margin: 12px auto; background: var(--hoja); break-inside: avoid;
+}
+.sudoku > * {
+  display: flex; align-items: center; justify-content: center; min-width: 0;
+  border-right: 1px solid var(--regla-fuerte); border-bottom: 1px solid var(--regla-fuerte);
+  font-family: var(--display); font-size: clamp(1rem, 4.6vw, 1.45rem); text-align: center;
+}
+.sudoku > :nth-child(3n) { border-right: 2px solid var(--tinta); }
+.sudoku > :nth-child(9n) { border-right: 0; }
+.sudoku > :nth-child(n+19):nth-child(-n+27), .sudoku > :nth-child(n+46):nth-child(-n+54) { border-bottom: 2px solid var(--tinta); }
+.sudoku > :nth-child(n+73) { border-bottom: 0; }
+.sudoku .dada { font-weight: 700; }
+.sudoku input { width: 100%; height: 100%; border-top: 0; border-left: 0; border-radius: 0; background: transparent; color: var(--letras); padding: 0; outline-offset: -3px; }
+.sudoku input.mal { background: color-mix(in srgb, var(--rojo) 18%, transparent); }
+.sudoku input.bien { color: var(--verde); }
+.sudoku.chico { width: 180px; border-width: 1.5px; margin: 8px 0; }
+.sudoku.chico > * { font-size: .78rem; }
+.sudoku-acciones { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- Receta, palabra, biotec ---------- */
+.receta { --acc: var(--letras); }
+.palabra { --acc: var(--historia); }
+.pasatiempo { --acc: var(--letras); }
+.receta-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: 4px 24px; }
+.receta-grid ol { padding-left: 1.2em; }
+@media (max-width: 560px) { .receta-grid { grid-template-columns: 1fr; } }
+.palabra-grande { font-family: var(--display); font-size: 2.2rem; font-weight: 700; line-height: 1; margin: 4px 0; }
+.palabra-grande small { font-family: var(--mono); font-size: .8rem; font-weight: 400; color: var(--tinta-suave); margin-left: 8px; }
+.cadena { font-family: var(--mono); font-size: .82rem; color: var(--acc); margin: 6px 0 10px; }
+.pron { font-family: var(--mono); font-size: .78rem; color: var(--tinta-suave); }
+
 @media (max-width: 520px) {
   body { font-size: 17px; }
   .clima { grid-template-columns: 1fr; }
@@ -268,6 +303,7 @@ button, input, textarea { font: inherit; color: inherit; }
 /* ---------- Impresión / PDF A4 ---------- */
 @page {
   size: A4;
+  background: #f5edd6;
   margin: 16mm 17mm 18mm;
   @bottom-left { content: "LULA · diario de la mañana"; font-family: "IBM Plex Mono", monospace; font-size: 7.5pt; color: #8a8173; }
   @bottom-right { content: counter(page) " / " counter(pages); font-family: "IBM Plex Mono", monospace; font-size: 7.5pt; color: #8a8173; }
@@ -276,11 +312,12 @@ button, input, textarea { font: inherit; color: inherit; }
 @media print {
   :root, :root[data-theme="dark"] {
     color-scheme: light;
-    --papel: #fff; --hoja: #fff; --tinta: #1d1a16; --tinta-suave: #5d564c;
+    --papel: #f5edd6; --hoja: #faf4e2; --tinta: #1d1a16; --tinta-suave: #5d564c;
     --regla: #ddd3c2; --regla-fuerte: #b9ab93;
     --rojo: #c8412b; --mundo: #c8412b; --pais: #2f5d8a; --ciencia: #6a4bb0; --verde: #3d6b35;
     --letras: #8a4b2a; --frances: #2345a8; --ingles: #0f6f73; --cultura: #a33a6b; --historia: #7a6320;
   }
+  html, body { background: #f5edd6; }
   body { font-size: 10.6pt; line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .hoja { max-width: none; padding: 0; }
   .barra, .oir, .puntaje, .solo-web { display: none !important; }
@@ -296,4 +333,7 @@ button, input, textarea { font: inherit; color: inherit; }
   .soluciones .tapado { filter: none; transform: rotate(180deg); }
   .soluciones .tapado ol { columns: 2; }
   .cuadro { min-height: 190px; }
+  .sudoku { width: 118mm; }
+  .sudoku input { color: transparent; }
+  .sudoku-acciones { display: none; }
 }

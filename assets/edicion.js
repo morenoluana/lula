@@ -36,7 +36,7 @@
 
   // Quiz: tocás una opción y te dice si está bien
   const quiz = document.querySelector(".quiz");
-  const marcador = document.querySelector(".puntaje");
+  const marcador = document.querySelector(".puntaje[data-quiz]");
   let bien = 0, hechas = 0;
   document.querySelectorAll(".quiz > li[data-ok]").forEach((q) => {
     const ok = Number(q.dataset.ok);
@@ -51,6 +51,41 @@
     }));
   });
   if (quiz && marcador) marcador.textContent = "Tocá una opción en cada pregunta.";
+
+  // Sudoku: se guarda lo que vas poniendo; "Revisar" marca los errores
+  document.querySelectorAll(".sudoku[data-sol]").forEach((tab, n) => {
+    const sol = tab.dataset.sol;
+    const celdas = [...tab.children];
+    const inputs = celdas.filter((c) => c.tagName === "INPUT");
+    const previo = leer(":sudoku" + n) || {};
+    celdas.forEach((c, i) => {
+      if (c.tagName !== "INPUT") return;
+      if (previo[i]) c.value = previo[i];
+      c.addEventListener("input", () => {
+        c.value = c.value.replace(/[^1-9]/g, "").slice(-1);
+        c.classList.remove("mal", "bien");
+        const estado = {};
+        celdas.forEach((x, j) => { if (x.tagName === "INPUT" && x.value) estado[j] = x.value; });
+        guardar(":sudoku" + n, estado);
+      });
+    });
+    const acciones = tab.nextElementSibling;
+    acciones?.querySelector("[data-revisar]")?.addEventListener("click", () => {
+      let faltan = 0, errores = 0;
+      celdas.forEach((c, i) => {
+        if (c.tagName !== "INPUT") return;
+        c.classList.remove("mal", "bien");
+        if (!c.value) { faltan++; return; }
+        if (c.value === sol[i]) c.classList.add("bien"); else { c.classList.add("mal"); errores++; }
+      });
+      const msj = acciones.querySelector(".puntaje");
+      if (msj) msj.textContent = errores ? `${errores} para revisar` : faltan ? `Vas bien. Faltan ${faltan}.` : "¡Resuelto! 🎉";
+    });
+    acciones?.querySelector("[data-borrar]")?.addEventListener("click", () => {
+      inputs.forEach((c) => { c.value = ""; c.classList.remove("mal", "bien"); });
+      guardar(":sudoku" + n, {});
+    });
+  });
 
   // Soluciones tapadas hasta que las tocás
   document.querySelectorAll(".tapado").forEach((s) => s.addEventListener("click", () => s.classList.add("visto")));

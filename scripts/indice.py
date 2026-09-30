@@ -33,3 +33,12 @@ s = re.sub(r"(<!-- EDICIONES -->).*?(<!-- /EDICIONES -->)",
            lambda m: m.group(1) + "\n" + "\n".join(items) + "\n  " + m.group(2), s, flags=re.S)
 indice.write_text(s, encoding="utf-8")
 print(f"{len(items)} ediciones en index.html")
+
+# hoy.html: link fijo que siempre lleva a la última edición
+ultima = max((RAIZ / "ediciones").glob("????-??-??.html"), default=None)
+if ultima:
+    (RAIZ / "hoy.html").write_text(
+        '<!doctype html><meta charset="utf-8"><title>Lula · hoy</title>'
+        f'<meta http-equiv="refresh" content="0; url=ediciones/{ultima.name}">'
+        f'<a href="ediciones/{ultima.name}">Ir a la edición de hoy</a>\n', encoding="utf-8")
+    print("hoy.html ->", ultima.name)
