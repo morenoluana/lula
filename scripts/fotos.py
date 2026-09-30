@@ -55,7 +55,7 @@ def consultar(params):
         info = (p.get("imageinfo") or [None])[0]
         if not info or info.get("mime") not in ("image/jpeg", "image/png"):
             continue
-        if info.get("width", 0) < 700:
+        if info.get("width", 0) < 450:
             continue
         return p["title"], info
     return None
