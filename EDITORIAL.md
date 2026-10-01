@@ -4,7 +4,7 @@ Cómo se arma cada edición del diario de la mañana. La edición la escribe Cla
 
 ## Para quién es
 
-Para Lula: vive en Buenos Aires, estudia biotecnología, lee en inglés y está aprendiendo francés desde cero (A1). Tiene inglés C1 y quiere mantenerlo. En francés es principiante absoluta (ni siquiera A1). Le encantan el ballet, la moda en el cine y los sudokus; no le gustan los ejercicios que «parecen estudio». Quiere enterarse de lo que pasa en el mundo sin la mirada centrada en Estados Unidos, conocer su ciudad (árboles, flores, aves, barrios, historia), leer clásicos universales y argentinos, y tener cosas para practicar en GoodNotes. Le encantan la moda y su historia, el arte, los museos, el cine viejo y la música clásica (el Cascanueces, el Lago de los cisnes, Vivaldi).
+Para Lula: vive en Buenos Aires, está **terminando la carrera de Biotecnología** (nivel de egresada: domina biología molecular, bioquímica, microbiología, genética, inmunología, bioprocesos y estadística), lee en inglés y está aprendiendo francés desde cero (A1). Tiene inglés C1 y quiere mantenerlo. En francés es principiante absoluta (ni siquiera A1). Le encantan el ballet, la moda en el cine y los sudokus; no le gustan los ejercicios que «parecen estudio». Quiere enterarse de lo que pasa en el mundo sin la mirada centrada en Estados Unidos, conocer su ciudad (árboles, flores, aves, barrios, historia), leer clásicos universales y argentinos, y tener cosas para practicar en GoodNotes. Le encantan la moda y su historia, el arte, los museos, el cine viejo y la música clásica (el Cascanueces, el Lago de los cisnes, Vivaldi).
 
 Tiene que sentirse como una revista hecha a mano para una sola persona: cálida, curiosa, precisa. Nada de relleno.
 
@@ -15,6 +15,20 @@ Tiene que sentirse como una revista hecha a mano para una sola persona: cálida,
 - Cada noticia explica **por qué importa** o **qué tiene que ver con vos**.
 - Ciencia con ojo crítico: tamaño de muestra, quién financia y si es en humanos, ratones o células.
 
+### Nivel de la ciencia: alto y técnico
+
+Lula está por recibirse de biotecnóloga. Las secciones de ciencia, biotec y ciencia cotidiana se escriben **para una colega**, no para el público general:
+
+- **No explicar lo básico** (qué es un gen, una proteína, un factor de transcripción, la PCR o CRISPR). Usar la terminología técnica directamente: nombres de genes y proteínas, vías de señalización, organismos modelo, líneas celulares, vectores, técnicas (scRNA-seq, Cryo-EM, ChIP-seq, CRISPR-Cas9/base editing, AlphaFold, citometría, HPLC-MS…).
+- **El paper, siempre:** revista, autores principales, institución, fecha y **DOI con link**. Si es un preprint (bioRxiv, medRxiv), aclararlo.
+- **Métodos y resultados con números:** diseño experimental, n, controles, cepas o modelos, condiciones, tamaño del efecto, valores de CIM, IC50, p o intervalos de confianza, fold change… lo que el paper reporte.
+- **Mecanismo:** cómo funciona a nivel molecular, idealmente con un esquema (SVG simple) o una figura libre de Commons.
+- **Caja «Lectura crítica»** en cada descubrimiento: limitaciones, sesgos, qué falta para que llegue a la clínica o al mercado (fases, escalado, regulación ANMAT/FDA/EMA, patentes) y preguntas abiertas.
+- **«Biotec en el mundo real»** también técnica: construcción genética, plataforma de expresión, proceso productivo (upstream/downstream), rendimientos, marco regulatorio (CONABIA, SENASA, ANMAT), modelo de negocio, propiedad intelectual y salidas laborales concretas para una biotecnóloga.
+- **«Ciencia en la vida cotidiana»:** el tema es cotidiano, pero la explicación va a nivel molecular y cuantitativo (reacciones, cinéticas, estructuras, enzimas).
+- Fuentes primarias antes que notas de prensa: buscar el paper original (Nature, Science, Cell, PNAS, PLOS, Nature Biotechnology, NEJM, Lancet, eLife, bioRxiv) y citar desde ahí.
+- Si alcanza, sumar un segundo descubrimiento corto con el mismo nivel.
+
 ## Estructura de cada edición
 
 Tiempo de lectura total: 25 a 35 minutos (más el sudoku). En PDF A4, entre 13 y 18 páginas, fondo crema.
@@ -24,7 +38,7 @@ Tiempo de lectura total: 25 a 35 minutos (más el sudoku). En PDF A4, entre 13 y
 | Portada | Saludo con el tema del día (efemérides, días internacionales), clima de BA para hoy, índice | `saludo`, `clima`, `indice` |
 | El mundo en cinco minutos | 4 o 5 noticias de las últimas 24 h. **Como mucho una** centrada en EE.UU. Priorizar Europa, América Latina, África, Asia y Medio Oriente. Cada una con «Por qué importa». | `mundo` |
 | Argentina y Buenos Aires | 3 o 4 noticias del país y la ciudad + caja «Para hacer en la ciudad» (muestras, cine, conciertos, ferias de esta semana, con dirección y horario). | `pais` |
-| Ciencia | Un descubrimiento reciente, con caja «La conexión con lo que estudiás» (biotecnología, biología molecular, química) + **caja «Biotec en el mundo real» (obligatoria)**: una empresa, un producto, un laboratorio o una científica, preferentemente argentina o latinoamericana (Bioceres, CONICET, Leloir, Milstein, vacunas, biosimilares, agro, alimentos, diagnóstico), con el camino del laboratorio al mercado + 1 o 2 notas de «Ciencia en la vida cotidiana». | `ciencia` |
+| Ciencia | Nivel técnico de egresada (ver «Nivel de la ciencia»). Un descubrimiento reciente con paper y DOI, métodos, resultados con números y caja «Lectura crítica», más una caja «La conexión con lo que estudiás» (biotecnología, biología molecular, química) + **caja «Biotec en el mundo real» (obligatoria)**: una empresa, un producto, un laboratorio o una científica, preferentemente argentina o latinoamericana (Bioceres, CONICET, Leloir, Milstein, vacunas, biosimilares, agro, alimentos, diagnóstico), con el camino del laboratorio al mercado + 1 o 2 notas de «Ciencia en la vida cotidiana». | `ciencia` |
 | Mirá a tu alrededor | Un árbol, una flor o un ave de Buenos Aires **que se pueda ver esta semana** (temporada de floración, migración, nidos), con ficha y cómo reconocerlo. Misión con checkboxes + cuadro para dibujar. | `naturaleza` |
 | Receta de estación | **Obligatoria.** Una receta simple con ingredientes de estación en Buenos Aires, ingredientes + pasos + caja «La química de la receta» que lo conecte con lo que estudia. | `receta` |
 | Un clásico en cinco minutos | Fragmento de un clásico universal (dominio público, traducción propia si hace falta), contexto y un puente con Argentina, el cine o hoy. Una pregunta para escribir. | `letras` |
