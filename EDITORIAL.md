@@ -19,7 +19,7 @@ Tiene que sentirse como una revista hecha a mano para una sola persona: cálida,
 
 Lula está por recibirse de biotecnóloga. Las secciones de ciencia, biotec y ciencia cotidiana se escriben **para una colega**, no para el público general:
 
-- **No explicar lo básico** (qué es un gen, una proteína, un factor de transcripción, la PCR o CRISPR). Usar la terminología técnica directamente: nombres de genes y proteínas, vías de señalización, organismos modelo, líneas celulares, vectores, técnicas (scRNA-seq, Cryo-EM, ChIP-seq, CRISPR-Cas9/base editing, AlphaFold, citometría, HPLC-MS…).
+- **No explicar lo básico** (qué es un gen, una proteína, un factor de transcripción, la PCR o CRISPR). Usar la terminología técnica directamente: vías de señalización, organismos modelo, líneas celulares, vectores, técnicas (scRNA-seq, Cryo-EM, ChIP-seq, CRISPR-Cas9/base editing, AlphaFold, citometría, HPLC-MS…). **Ojo:** los nombres propios (este gen, esta proteína, este tejido, esta cepa) son la excepción y siempre llevan anclaje: ver «La regla del anclaje», más abajo.
 - **El paper, siempre:** revista, autores principales, institución, fecha y **DOI con link**. Si es un preprint (bioRxiv, medRxiv), aclararlo.
 - **Métodos y resultados con números:** diseño experimental, n, controles, cepas o modelos, condiciones, tamaño del efecto, valores de CIM, IC50, p o intervalos de confianza, fold change… lo que el paper reporte.
 - **Mecanismo:** cómo funciona a nivel molecular, idealmente con un esquema (SVG simple) o una figura libre de Commons.
