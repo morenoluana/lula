@@ -55,7 +55,28 @@ Tres reglas prácticas:
 
 ## Estructura de cada edición
 
-Tiempo de lectura total: 25 a 35 minutos (más el sudoku). En PDF A4, entre 13 y 18 páginas, fondo crema.
+### Cuánto tiene que durar (importante)
+
+Más corto de lo que venía saliendo. Dos formatos:
+
+| | Lectura | PDF A4 | Palabras aprox. |
+|---|---|---|---|
+| **Lunes a viernes** | 18 a 22 min | **10 a 13 páginas** | 3.500 a 4.200 |
+| **Sábado y domingo** | 12 a 15 min | **7 a 9 páginas** | 2.200 a 3.000 |
+
+El límite es real: **antes de hacer el commit hay que correr `node scripts/pdf.mjs` y contar las páginas** (el PDF de prueba sale sin fotos, así que al número hay que sumarle 1 o 2). Si se pasa, se recorta de verdad —párrafos enteros, no palabras sueltas— y se vuelve a medir. Lo que se recorta primero: los párrafos de contexto que se pueden dar por sabidos, las noticias secundarias, las filas de las fichas y los ejemplos de más. **Lo que nunca se recorta: los anclajes de los nombres propios** (ver «La regla del anclaje»): si hay que elegir, va menos tema y mejor explicado.
+
+Cómo se achica cada sección, respecto de lo que venía saliendo:
+
+- **El mundo:** 3 noticias con «Por qué importa», más un párrafo corto de «Y además» con dos o tres líneas. No cinco notas largas.
+- **Argentina:** 2 temas, no 4. La caja «Para hacer en la ciudad», 3 ítems como máximo.
+- **Ciencia:** un solo descubrimiento (nunca dos), «El experimento» en 4 viñetas, «Lectura crítica» en 3. «Biotec en el mundo real» en 4 viñetas. Una sola nota de «Ciencia en la vida cotidiana», de dos párrafos.
+- **Naturaleza:** fichas de 3 filas; 2 misiones.
+- **Un clásico:** la cita y tres viñetas de contexto, no más.
+- **Inglés:** 250 a 300 palabras y 8 expresiones.
+- **Cuaderno:** quiz de **6 a 8** preguntas (no 10) y dos espacios de escritura, no cuatro.
+
+Fondo crema siempre.
 
 | Sección | Contenido | Clase CSS |
 |---|---|---|
@@ -91,7 +112,16 @@ Tiempo de lectura total: 25 a 35 minutos (más el sudoku). En PDF A4, entre 13 y
     <figcaption>Qué mirar: los 32 fouettés…</figcaption>
   </figure>
   ```
-- **Domingo — Edición lenta:** un texto clásico más largo, «la semana en 10 titulares», repaso completo de las palabras en francés e inglés de la semana, y el «asombro de la semana».
+- **Domingo — Edición lenta:** un texto clásico más largo, **«la semana en seis titulares»** (no diez), repaso de las palabras de la semana en francés e inglés, y el «asombro de la semana».
+
+#### El fin de semana es más tranquilo
+
+Sábado y domingo se leen con tiempo y sin apuro, y tienen que **pesar menos**, no más. Además del largo de la tabla de arriba:
+
+- El sábado, la sección de ballet y el sudoku son el corazón de la edición: ahí sí se puede ir con detalle. El resto va corto.
+- Las noticias del fin de semana van en **modo resumen**: lo importante, en pocas líneas, sin análisis largo.
+- **Se pueden saltear** en sábado y domingo, si la edición queda ajustada: «Hoy en la historia», la receta (los findes puede ir solo si es simple y rica) y el English corner del sábado.
+- El tono también cambia: más conversado, menos informe. Nada que dé la sensación de tarea pendiente.
 
 La historia argentina entra en «Hoy en la historia»: alternar efemérides universales y argentinas.
 
