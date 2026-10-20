@@ -26,6 +26,30 @@ Lula está por recibirse de biotecnóloga. Las secciones de ciencia, biotec y ci
 - **Caja «Lectura crítica»** en cada descubrimiento: limitaciones, sesgos, qué falta para que llegue a la clínica o al mercado (fases, escalado, regulación ANMAT/FDA/EMA, patentes) y preguntas abiertas.
 - **«Biotec en el mundo real»** también técnica: construcción genética, plataforma de expresión, proceso productivo (upstream/downstream), rendimientos, marco regulatorio (CONABIA, SENASA, ANMAT), modelo de negocio, propiedad intelectual y salidas laborales concretas para una biotecnóloga.
 - **«Ciencia en la vida cotidiana»:** el tema es cotidiano, pero la explicación va a nivel molecular y cuantitativo (reacciones, cinéticas, estructuras, enzimas).
+#### Qué sabe y qué no: el plan de la carrera
+
+Lula estudia la **Licenciatura en Biotecnología en UADE**. El plan da por sabido, en este orden: química general, biología celular y molecular, álgebra y física (1.º); **genética molecular, microbiología general, análisis instrumental** y química orgánica (2.º); **ingeniería genética I, bioinformática, inmunología** y fisicoquímica (3.º); **ingeniería genética II, biorreactores, cultivos celulares**, biotecnología y derecho (4.º). (Fuente: plan de estudios de UADE y listados de terceros; los de terceros pueden estar desactualizados.)
+
+De ahí sale la calibración:
+
+- **Se da por sabido, sin explicar:** técnicas (PCR y qPCR, clonado, electroforesis, Western, ELISA, citometría, secuenciación, CRISPR, cultivo celular, cromatografía, espectrofotometría), conceptos centrales (dogma central, regulación transcripcional, señalización, inmunidad innata y adaptativa, cinética enzimática, metabolismo, crecimiento microbiano, upstream/downstream) y la lectura de un paper.
+- **Se explica en una línea, aunque sepa el concepto general:** todo lo que sea **un nombre propio**. Un gen, una proteína, una vía, una cepa, una línea celular, un tipo celular, un tejido, un organismo modelo o una enzima concretos **no se mencionan a secas**. Nadie se acuerda de memoria qué hace *Rsd1*, *SIN3A*, *Mgv1* o los NAM, y perderse en el primer párrafo arruina el resto.
+
+#### La regla del anclaje (importante)
+
+**Cada vez que aparece un nombre propio biológico, va acompañado, ahí mismo, de un anclaje de 5 a 15 palabras** que responda: *qué es, dónde vive y qué hace normalmente*. Entre comas, entre paréntesis o en aposición; nunca en una nota al pie, nunca después.
+
+- Mal: «el eje IL-4 → STAT6 → PPARγ induce ARG1 en los NAM».
+- Bien: «en los **NAM** (macrófagos que viven pegados a los nervios y las vías aéreas del pulmón, no dentro del alvéolo), la **IL-4** —la citoquina que define la respuesta de tipo 2, la de alergias y parásitos— activa al factor de transcripción **STAT6**, que prende a **PPARγ**, el interruptor del metabolismo de lípidos, y eso induce **ARG1**, la enzima que consume arginina».
+- Mal: «la haploinsuficiencia de *SIN3A*».
+- Bien: «*SIN3A*, que codifica el andamio de un complejo corepresor que apaga genes sacándoles los grupos acetilo a las histonas».
+
+Tres reglas prácticas:
+
+1. **El anclaje va la primera vez y, si la sección es larga, se repite abreviado la segunda.**
+2. **Siglas:** se escriben desplegadas la primera vez, con la traducción si viene del inglés.
+3. **El mapa antes del detalle:** cada sección de ciencia abre con dos o tres oraciones de ubicación —de qué organismo, qué tejido y qué proceso estamos hablando, y por qué alguien se haría esa pregunta— antes de meterse en el mecanismo. Si hay más de cuatro nombres propios en juego, va una caja **«Quién es quién»** con una línea por cada uno.
+
 - Fuentes primarias antes que notas de prensa: buscar el paper original (Nature, Science, Cell, PNAS, PLOS, Nature Biotechnology, NEJM, Lancet, eLife, bioRxiv) y citar desde ahí.
 - Si alcanza, sumar un segundo descubrimiento corto con el mismo nivel.
 
