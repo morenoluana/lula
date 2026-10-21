@@ -61,8 +61,10 @@ Más corto de lo que venía saliendo. Dos formatos:
 
 | | Lectura | PDF A4 | Palabras aprox. |
 |---|---|---|---|
-| **Lunes a viernes** | 18 a 22 min | **10 a 13 páginas** | 3.500 a 4.200 |
-| **Sábado y domingo** | 12 a 15 min | **7 a 9 páginas** | 2.200 a 3.000 |
+| **Lunes a viernes** | 18 a 22 min | **13 a 15 páginas** | 3.500 a 4.200 |
+| **Sábado y domingo** | 12 a 15 min | **9 a 11 páginas** | 2.200 a 3.000 |
+
+**El número que manda es el de palabras**, no el de páginas: la tapa, el índice, el sudoku y las soluciones ocupan unas cuatro páginas fijas pase lo que pase, y las cajas no se parten entre páginas, así que el PDF nunca baja de ahí. Si hiciera falta achicarlo más, hay que tocar esa estructura (por ejemplo, el sudoku al lado de las soluciones), no seguir recortando texto.
 
 El límite es real: **antes de hacer el commit hay que correr `node scripts/pdf.mjs` y contar las páginas** (el PDF de prueba sale sin fotos, así que al número hay que sumarle 1 o 2). Si se pasa, se recorta de verdad —párrafos enteros, no palabras sueltas— y se vuelve a medir. Lo que se recorta primero: los párrafos de contexto que se pueden dar por sabidos, las noticias secundarias, las filas de las fichas y los ejemplos de más. **Lo que nunca se recorta: los anclajes de los nombres propios** (ver «La regla del anclaje»): si hay que elegir, va menos tema y mejor explicado.
 
