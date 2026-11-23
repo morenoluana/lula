@@ -49,15 +49,25 @@ jobs:
           echo "Generar:"; cat pdfs.txt
           echo "hay=$([ -s pdfs.txt ] && echo si || echo no)" >> "$GITHUB_OUTPUT"
 
+      # El 23/11 este paso se colgó dos veces media hora en la instalación de
+      # Playwright. Con timeout y continue-on-error falla rápido y el paso de
+      # abajo igual guarda las fotos que ya se bajaron.
       - name: Generar PDF
         if: steps.pdfs.outputs.hay == 'si'
+        timeout-minutes: 8
+        continue-on-error: true
+        env:
+          DEBIAN_FRONTEND: noninteractive
+          npm_config_fund: "false"
+          npm_config_audit: "false"
         run: |
           npm i -g playwright@1.56.1
-          npx -y playwright@1.56.1 install --with-deps chromium
+          playwright install --with-deps chromium
           node scripts/pdf.mjs $(cat pdfs.txt)
           python3 scripts/indice.py
 
       - name: Guardar fotos y PDF en el repo
+        if: always()
         run: |
           rm -f cambiadas.txt tocadas.txt pdfs.txt
           git config user.name "lula-bot"
